@@ -31,7 +31,9 @@ const Product = ({ item, provider, account, ethcommerce, togglePop }) => {
 
     setHasBought(true);
   };
-
+  useEffect(() => {
+    fetchDetails()
+  }, [hasBought])
   return (
     <div className='product'>
       <div className='product__details'>
@@ -60,7 +62,7 @@ const Product = ({ item, provider, account, ethcommerce, togglePop }) => {
           </p>
         </div>
         <div className='product__order'>
-          <h1>{ethers.utils.formatUnits(item.cost.toString(), 'ether')} ETH</h1>
+          <h1>{ethers.formatUnits(item.cost.toString(), 'ether')} ETH</h1>
 
           <p>
             FREE delivery <br />

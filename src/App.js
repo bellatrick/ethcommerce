@@ -3,6 +3,7 @@ import { ethers } from 'ethers';
 
 import Navigation from './components/Navigation';
 import Section from './components/Section';
+import Product from './components/Product'
 // ABIs
 import Ethcommerce from './abis/Ethcommerce.json';
 
@@ -78,7 +79,7 @@ function App() {
         </>
       )}
             {toggle && (
-        <Product item={item} provider={provider} account={account} dappazon={dappazon} togglePop={togglePop} />
+        <Product item={item} provider={provider} account={account} ethcommerce={ethcommerce} togglePop={togglePop} />
       )}
     </div>
   );
